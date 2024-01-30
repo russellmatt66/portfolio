@@ -1,0 +1,3 @@
+C=['.c','.h']
+ASSEMBLY=['.s']
+PYTHON=['.py']
