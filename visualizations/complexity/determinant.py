@@ -16,8 +16,9 @@ print(rt_list)
 
 plt.semilogy(N_list, rt_list, linestyle='-', label='O(N) = F(N)')
 plt.semilogy(N_list, 2**N_list, linestyle='--', color='orange', label='$O(N) = 2^{N}$')
-plt.semilogy(N_list, 4**N_list, linestyle='--', color='red', label='$O(N) = 4^{N}$')
-plt.semilogy(N_list, 8**N_list, linestyle='--', color='green', label='$O(N) = 8^{N}$')
+# plt.semilogy(N_list, 4**N_list, linestyle='--', color='red', label='$O(N) = 4^{N}$')
+# plt.semilogy(N_list, 8**N_list, linestyle='--', color='green', label='$O(N) = 8^{N}$')
+plt.semilogy(N_list, N_list**N_list, linestyle='--', color='red', label='$O(N) = N^{N}$')
 
 plt.semilogy(N_list, [1e9] * len(N_list), linestyle='-.', color='blue', label='1 GFLOP')
 plt.semilogy(N_list, [1e12] * len(N_list), linestyle='-.', color='orange', label='1 TFLOP')
@@ -26,7 +27,7 @@ plt.semilogy(N_list, [1e18] * len(N_list), linestyle='-.', color='green', label=
 
 plt.xticks(N_list)
 plt.xlim(N_list.min(), N_list.max())
-plt.ylim(min(rt_list), max(rt_list))
+plt.ylim(min(rt_list), 5e18)
 plt.ylabel('FPOs')
 plt.xlabel('N')
 plt.title('Computational work required to compute a determinant by sub-matrix expansion')
